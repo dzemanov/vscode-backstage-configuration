@@ -1,0 +1,74 @@
+{
+  "name": "vscode-backstage-configuration",
+  "displayName": "VS Code Backstage Configuration",
+  "description": "IntelliSense support for Backstage app-config.yaml files",
+  "version": "0.1.0",
+  "publisher": "dominikazemanovicova",
+  "author": {
+    "name": "Dominika Zemanovicova",
+    "url": "https://github.com/dzemanov"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dzemanov/vscode-backstage-configuration.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dzemanov/vscode-backstage-configuration/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "backstage",
+    "autocomplete",
+    "intellisense",
+    "yaml"
+  ],
+  "keywords": [
+    "backstage",
+    "yaml",
+    "config",
+    "intellisense",
+    "autocomplete"
+  ],
+  "icon": "resources/icons/vscode-backstage-configuration.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "workspaceContains:**/app-config*.yaml"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-backstage-configuration.regenerateSchema",
+        "title": "Backstage: Regenerate Config Schema"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && node esbuild.js",
+    "check-types": "tsc --noEmit",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "esbuild": "^0.27.4",
+    "eslint": "^10.0.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.56.1"
+  }
+}

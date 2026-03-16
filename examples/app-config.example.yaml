@@ -1,0 +1,35 @@
+# Example Backstage configuration file
+# Open this in VSCode with the extension installed to see IntelliSense in action
+
+app:
+  title: My Backstage App
+  baseUrl: http://localhost:3000
+
+organization:
+  name: My Company
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  database:
+    client: pg
+    connection:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+
+catalog:
+  locations:
+    - type: file
+      target: ../../examples/entities.yaml
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+
+techdocs:
+  builder: local
+  generator:
+    runIn: local
+  publisher:
+    type: local
