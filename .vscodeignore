@@ -5,6 +5,7 @@
 **/*.map
 node_modules/**
 src/**
+examples/**
 esbuild.js
 eslint.config.mjs
 tsconfig.json
