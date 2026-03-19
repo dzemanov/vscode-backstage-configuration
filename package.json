@@ -3,7 +3,7 @@
   "displayName": "VS Code Backstage Configuration",
   "description": "IntelliSense support for Backstage app-config.yaml files",
   "version": "0.1.0",
-  "publisher": "dominikazemanovicova",
+  "publisher": "dzemanov",
   "author": {
     "name": "Dominika Zemanovicova",
     "url": "https://github.com/dzemanov"
