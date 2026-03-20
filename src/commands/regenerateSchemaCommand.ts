@@ -23,7 +23,7 @@ export function registerRegenerateSchemaCommand(
       deps.schemaService.invalidate(cwd);
       await deps.schemaService.getSchemaForCwd(cwd);
       vscode.window.showInformationMessage(
-        `Backstage confiuration schema regenerated for ${cwd}. Reopen app-config*.yaml to refresh IntelliSense.`,
+        `Backstage configuration schema regenerated for ${cwd}. Reopen app-config*.yaml to refresh IntelliSense.`,
       );
     },
   );
