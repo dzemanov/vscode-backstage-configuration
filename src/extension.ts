@@ -10,8 +10,6 @@ import { registerSchemaContributor } from "./yaml/registerSchemaContributor";
 const YAML_EXTENSION_ID = "redhat.vscode-yaml";
 
 export async function activate(context: vscode.ExtensionContext) {
-  console.log("Backstage Config IntelliSense is now active");
-
   const store = new ConfigStore();
   const schemaProvider = new BackstageCliSchemaProvider();
   const schemaService = new SchemaService(store, schemaProvider);
